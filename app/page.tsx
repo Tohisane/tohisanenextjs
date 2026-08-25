@@ -40,8 +40,14 @@ const categories = [
 ];
 
 const products = [
-  { name: "Balance", use: "Daily Herbal + CBD Support", price: "$48", tag: "Best Seller", icon: "balance" },
-  { name: "Sleep", use: "Nighttime Herbal Ritual", price: "$42", tag: "Rest", icon: "sleep" },
+  {
+    name: "Balance",
+    use: "Daily Botanical + Cannabinoid Support",
+    price: "$48",
+    tag: "Best Seller",
+    icon: "balance",
+  },
+  { name: "Sleep", use: "Nighttime Botanical Ritual", price: "$42", tag: "Rest", icon: "sleep" },
   { name: "Relief", use: "Body Comfort Blend", price: "$58", tag: "Recovery", icon: "relief" },
 ];
 
@@ -89,7 +95,7 @@ const ProductIcon = ({ type }: { type: string }) => {
 const steps = [
   "Take the pain-pattern quiz",
   "Receive a personalized wellness roadmap",
-  "Choose herbs, CBD support, and daily rituals",
+  "Choose botanicals, cannabinoid support, and daily rituals",
   "Track what works with guided follow-up",
 ];
 
@@ -143,8 +149,8 @@ export default function TohisaneWebsite() {
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-[#3f5148]">
                 TOHISANE helps midlife adults with stress-driven body pain create realistic wellness
-                strategies through herbal education, CBD guidance, sleep support, and nervous system
-                care.
+                strategies through botanical education, cannabinoid guidance, sleep support, and
+                nervous system care.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button className="rounded-full bg-[#173B2F] px-8 py-6 text-base text-[#F5F1E8] hover:bg-[#0f2a21]">
@@ -160,7 +166,7 @@ export default function TohisaneWebsite() {
                 </Link>
               </div>
               <p className="mt-5 text-xs uppercase tracking-[0.25em] text-[#8B6E4E]">
-                Education • Herbal guidance • Plant-based routines
+                Education • Botanical guidance • Plant-based routines
               </p>
             </motion.div>
 
@@ -202,9 +208,9 @@ export default function TohisaneWebsite() {
               <p className="text-sm uppercase tracking-[0.2em] text-[#D7C8B3]">Wellness Consults</p>
             </div>
             <div>
-              <p className="font-serif text-3xl">CBD</p>
+              <p className="font-serif text-3xl">Botanical</p>
               <p className="text-sm uppercase tracking-[0.2em] text-[#D7C8B3]">
-                Education + Support
+                Cannabinoid Education
               </p>
             </div>
             <div>
@@ -290,8 +296,8 @@ export default function TohisaneWebsite() {
             </h2>
             <p className="mt-5 text-lg leading-8 text-[#3f5148]">
               We start by mapping your stress, sleep, lifestyle, and discomfort patterns. Then we
-              build a practical, non-medical wellness plan with herbs, CBD education, and daily
-              rituals you can discuss with your healthcare provider.
+              build a practical, non-medical wellness plan with botanicals, cannabinoid education,
+              and daily rituals you can discuss with your healthcare provider.
             </p>
           </div>
           <div className="space-y-4">
@@ -350,7 +356,7 @@ export default function TohisaneWebsite() {
               </p>
             </div>
             <p className="max-w-xl text-xs leading-6 text-[#3f5148]">
-              Disclaimer: TOHISANE provides wellness education and herbal guidance only. This
+              Disclaimer: TOHISANE provides wellness education and botanical guidance only. This
               website does not provide medical advice, diagnosis, or treatment. Consult a licensed
               healthcare professional for medical concerns.
             </p>

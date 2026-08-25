@@ -45,8 +45,8 @@ const benefits = [
 const includes = [
   "Comprehensive intake assessment",
   "Stress and pain pattern mapping",
-  "Herbal education recommendations",
-  "CBD guidance (if appropriate)",
+  "Botanical education recommendations",
+  "Cannabinoid guidance (if appropriate)",
   "Sleep and nervous system strategies",
   "Written summary and next steps",
 ];
@@ -237,7 +237,7 @@ export default function ConsultationPage() {
               </p>
             </div>
             <p className="max-w-xl text-xs leading-6 text-[#3f5148]">
-              Disclaimer: TOHISANE provides wellness education and herbal guidance only. This
+                Disclaimer: TOHISANE provides wellness education and botanical guidance only. This
               website does not provide medical advice, diagnosis, or treatment. Consult a licensed
               healthcare professional for medical concerns.
             </p>
