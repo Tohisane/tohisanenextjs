@@ -95,8 +95,8 @@ const ProductIcon = ({ type }: { type: string }) => {
 const steps = [
   "Take the pain-pattern quiz",
   "Receive a personalized wellness roadmap",
-  "Choose botanicals, cannabinoid support, and daily rituals",
-  "Track what works with guided follow-up",
+  "Explore botanicals, cannabinoid support, and restorative practices",
+  "Track what works and refine your routine",
 ];
 
 export default function TohisaneWebsite() {
