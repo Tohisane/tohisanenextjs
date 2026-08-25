@@ -347,7 +347,7 @@ export default function TohisaneWebsite() {
           </div>
         </section>
 
-        <footer className="border-t border-[#D7C8B3] px-5 py-10">
+        <footer className="border-t border-[#D7C8B3] px-5 pb-56 pt-10 md:pb-40">
           <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row">
             <div>
               <div className="font-serif text-2xl tracking-[0.35em]">TOHISANE</div>
@@ -365,17 +365,15 @@ export default function TohisaneWebsite() {
       </main>
 
       {/* Floating Calendly Widget */}
-      <section className="fixed bottom-6 right-6 z-50">
-        <div className="w-80 rounded-3xl border border-neutral-200 bg-white/95 p-6 shadow-2xl backdrop-blur-sm">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">
-            TOHISANE
-          </p>
+      <aside className="fixed bottom-4 right-4 z-50 max-w-[calc(100vw-2rem)]">
+        <div className="w-60 rounded-[1.5rem] border border-[#D7C8B3] bg-[#FBF8F1]/95 p-4 shadow-lg backdrop-blur">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#A47D47]">TOHISANE</p>
 
-          <h3 className="mt-2 text-2xl font-light tracking-wide text-black">
+          <h3 className="mt-1 font-serif text-lg leading-snug text-[#173B2F]">
             Book a Consultation
           </h3>
 
-          <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+          <p className="mt-2 text-xs leading-5 text-[#3f5148]">
             Begin your personalized restorative protocol.
           </p>
 
@@ -383,12 +381,12 @@ export default function TohisaneWebsite() {
             href="https://calendly.com/seren-tohisane/wellness-strategy-consultation"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 block rounded-full bg-black px-5 py-3 text-center text-sm tracking-wide text-white transition hover:bg-neutral-800"
+            className="mt-4 block rounded-full bg-[#173B2F] px-4 py-2.5 text-center text-xs uppercase tracking-[0.18em] text-[#F5F1E8] transition hover:bg-[#0f2a21]"
           >
-            BOOK CONSULTATION
+            Book Consultation
           </a>
         </div>
-      </section>
+      </aside>
     </div>
   );
 }
