@@ -259,6 +259,9 @@ export default function TohisaneWebsite() {
               <h2 className="mt-3 font-serif text-4xl md:text-5xl">
                 Plant rituals for modern discomfort
               </h2>
+              <p className="mt-4 text-sm leading-6 text-[#3f5148]">
+                Book a consultation for purchase options.
+              </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {products.map((p) => (
@@ -275,12 +278,7 @@ export default function TohisaneWebsite() {
                     </div>
                     <h3 className="font-serif text-2xl">TOHISANE {p.name}</h3>
                     <p className="mt-2 text-sm text-[#3f5148]">{p.use}</p>
-                    <div className="mt-5 flex items-center justify-between">
-                      <span className="font-serif text-xl">{p.price}</span>
-                      <Button className="rounded-full bg-[#173B2F] text-[#F5F1E8]">
-                        Learn More
-                      </Button>
-                    </div>
+                    <p className="mt-5 font-serif text-xl">{p.price}</p>
                   </CardContent>
                 </Card>
               ))}
