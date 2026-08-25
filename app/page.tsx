@@ -228,16 +228,11 @@ export default function TohisaneWebsite() {
         </section>
 
         <section id="shop" className="mx-auto max-w-7xl px-5 py-20">
-          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <p className="text-sm uppercase tracking-[0.25em] text-[#A47D47]">
-                Start with support
-              </p>
-              <h2 className="mt-3 font-serif text-4xl md:text-5xl">Shop by need</h2>
-            </div>
-            <Button variant="outline" className="rounded-full border-[#173B2F]">
-              View all blends
-            </Button>
+          <div className="mb-10">
+            <p className="text-sm uppercase tracking-[0.25em] text-[#A47D47]">
+              Start with support
+            </p>
+            <h2 className="mt-3 font-serif text-4xl md:text-5xl">Shop by need</h2>
           </div>
           <div className="grid gap-5 md:grid-cols-4">
             {categories.map(({ title, desc, icon: Icon }) => (
