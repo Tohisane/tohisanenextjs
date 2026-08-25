@@ -232,7 +232,7 @@ export default function TohisaneWebsite() {
             <p className="text-sm uppercase tracking-[0.25em] text-[#A47D47]">
               Start with support
             </p>
-            <h2 className="mt-3 font-serif text-4xl md:text-5xl">Shop by need</h2>
+            <h2 className="mt-3 font-serif text-4xl md:text-5xl">Understand your needs</h2>
           </div>
           <div className="grid gap-5 md:grid-cols-4">
             {categories.map(({ title, desc, icon: Icon }) => (
