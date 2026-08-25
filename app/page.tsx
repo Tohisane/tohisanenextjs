@@ -128,9 +128,11 @@ export default function TohisaneWebsite() {
           </nav>
           <div className="hidden items-center gap-3 md:flex">
             <Search className="h-5 w-5" />
-            <Button className="rounded-full bg-[#173B2F] px-6 text-[#F5F1E8] hover:bg-[#0f2a21]">
-              Start Quiz
-            </Button>
+            <Link href="/restorative-check-in">
+              <Button className="rounded-full bg-[#173B2F] px-6 text-[#F5F1E8] hover:bg-[#0f2a21]">
+                Take the Quiz
+              </Button>
+            </Link>
           </div>
           <Menu className="h-6 w-6 md:hidden" />
         </div>
@@ -153,9 +155,12 @@ export default function TohisaneWebsite() {
                 nervous system care.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button className="rounded-full bg-[#173B2F] px-8 py-6 text-base text-[#F5F1E8] hover:bg-[#0f2a21]">
-                  Find Your Ritual <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link href="/restorative-check-in">
+                  <Button className="w-full rounded-full bg-[#173B2F] px-8 py-6 text-base text-[#F5F1E8] hover:bg-[#0f2a21]">
+                    Take the Restorative Wellness Check-In{" "}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
                 <Link href="/book-consultation">
                   <Button
                     variant="outline"
