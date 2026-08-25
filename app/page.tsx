@@ -24,7 +24,7 @@ const categories = [
   },
   {
     title: "Sleep + Recovery",
-    desc: "Evening rituals and herbal education for deeper rest and next-day resilience.",
+    desc: "Evening rituals and botanical education for deeper rest and next-day resilience.",
     icon: Moon,
   },
   {
@@ -33,8 +33,8 @@ const categories = [
     icon: Leaf,
   },
   {
-    title: "CBD Guidance",
-    desc: "Clear, grounded education on choosing and using CBD responsibly.",
+    title: "Cannabinoid Education",
+    desc: "Evidence-informed education on cannabinoids and their role in restorative wellness.",
     icon: ShieldCheck,
   },
 ];
