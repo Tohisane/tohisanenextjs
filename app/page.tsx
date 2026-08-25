@@ -344,9 +344,11 @@ export default function TohisaneWebsite() {
                 <p className="font-serif text-2xl">
                   &quot;For the first time, I had language for what my body was doing.&quot;
                 </p>
-                <Button className="mt-6 w-full rounded-full bg-[#173B2F] py-6 text-[#F5F1E8]">
-                  Book Now
-                </Button>
+                <Link href="/consultation" className="mt-6 block">
+                  <Button className="w-full rounded-full bg-[#173B2F] py-6 text-[#F5F1E8] hover:bg-[#0f2a21]">
+                    Book Now
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
