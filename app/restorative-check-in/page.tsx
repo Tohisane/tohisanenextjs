@@ -99,7 +99,7 @@ const results: Record<
       "Reduce unnecessary stimulation",
       "Spend deliberate time outdoors",
       "Create small rituals that signal safety and ease",
-      "Explore botanicals and cannabinoid education thoughtfully",
+      "Explore botanical and plant-based education thoughtfully",
     ],
   },
   REPLENISH: {

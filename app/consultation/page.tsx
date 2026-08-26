@@ -46,7 +46,7 @@ const includes = [
   "Comprehensive intake assessment",
   "Stress and pain pattern mapping",
   "Botanical education recommendations",
-  "Cannabinoid guidance (if appropriate)",
+  "Plant-based wellness guidance (if appropriate)",
   "Sleep and nervous system strategies",
   "Written summary and next steps",
 ];

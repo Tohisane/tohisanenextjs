@@ -12,7 +12,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: 'TOHISANE | Restorative Wellness House',
   description:
-    'Botanical wellness guidance, cannabinoid education, and whole-body support for stress-driven body pain.',
+    'Botanical wellness guidance, plant-based education, and whole-body support for stress-driven body pain.',
 }
 
 export default function RootLayout({
