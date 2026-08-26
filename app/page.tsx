@@ -33,8 +33,8 @@ const categories = [
     icon: Leaf,
   },
   {
-    title: "Cannabinoid Education",
-    desc: "Evidence-informed education on cannabinoids and their role in restorative wellness.",
+    title: "Plant-Based Education",
+    desc: "Evidence-informed education on botanicals and their role in restorative wellness.",
     icon: ShieldCheck,
   },
 ];
@@ -42,7 +42,7 @@ const categories = [
 const products = [
   {
     name: "Balance",
-    use: "Daily Botanical + Cannabinoid Support",
+    use: "Daily Botanical + Plant-Based Support",
     price: "$48",
     tag: "Best Seller",
     icon: "balance",
@@ -95,7 +95,7 @@ const ProductIcon = ({ type }: { type: string }) => {
 const steps = [
   "Take the pain-pattern quiz",
   "Receive a personalized wellness roadmap",
-  "Explore botanicals, cannabinoid support, and restorative practices",
+  "Explore botanicals, plant-based support, and restorative practices",
   "Track what works and refine your routine",
 ];
 
@@ -151,7 +151,7 @@ export default function TohisaneWebsite() {
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-[#3f5148]">
                 TOHISANE helps midlife adults with stress-driven body pain create realistic wellness
-                strategies through botanical education, cannabinoid guidance, sleep support, and
+                strategies through botanical education, plant-based guidance, sleep support, and
                 nervous system care.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -215,7 +215,7 @@ export default function TohisaneWebsite() {
             <div>
               <p className="font-serif text-3xl">Botanical</p>
               <p className="text-sm uppercase tracking-[0.2em] text-[#D7C8B3]">
-                Cannabinoid Education
+                Plant-Based Education
               </p>
             </div>
             <div>
@@ -294,7 +294,7 @@ export default function TohisaneWebsite() {
             </h2>
             <p className="mt-5 text-lg leading-8 text-[#3f5148]">
               We start by mapping your stress, sleep, lifestyle, and discomfort patterns. Then we
-              build a practical, non-medical wellness plan with botanicals, cannabinoid education,
+              build a practical, non-medical wellness plan with botanicals, plant-based education,
               and daily rituals you can discuss with your healthcare provider.
             </p>
           </div>
