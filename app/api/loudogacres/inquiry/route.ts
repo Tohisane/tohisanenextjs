@@ -48,11 +48,14 @@ function fail(message: string, status: number) {
 
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LOUDOG_INQUIRY_TO_EMAIL;
-  const from = process.env.LOUDOG_INQUIRY_FROM_EMAIL || 'Loudog Acres Website <onboarding@resend.dev>';
+  const to = process.env.LOUDOG_INQUIRY_TO_EMAIL || 'loudogacres@gmail.com';
+  const domain = process.env.RESEND_EMAIL_DOMAIN;
+  const from =
+    process.env.LOUDOG_INQUIRY_FROM_EMAIL ||
+    (domain ? `Loudog Acres Website <inquiries@${domain}>` : 'Loudog Acres Website <onboarding@resend.dev>');
 
-  if (!apiKey || !to) {
-    console.error('Loudog inquiry: RESEND_API_KEY or LOUDOG_INQUIRY_TO_EMAIL is not configured.');
+  if (!apiKey) {
+    console.error('Loudog inquiry: RESEND_API_KEY is not configured.');
     return fail('Online inquiries are temporarily unavailable. Please try again later.', 503);
   }
 
