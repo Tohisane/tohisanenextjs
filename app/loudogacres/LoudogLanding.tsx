@@ -69,7 +69,7 @@ export default function LoudogLanding() {
 
   return (
     <main className={styles.site}>
-      <div className={styles.topline}><span>LOCALLY ROOTED · WOMAN-OWNED</span><span>CLEVELAND · CHATTANOOGA · SOUTHEAST TENNESSEE</span></div>
+      <div className={styles.topline}><span>LOCALLY ROOTED</span><span>CLEVELAND · CHATTANOOGA · SOUTHEAST TENNESSEE</span></div>
       <header className={styles.header}>
         <a href="#top" className={styles.wordmark} onClick={navClick} aria-label="Loudog Acres home"><span>LOUDOG ACRES</span><small>BESPOKE LANDSCAPING &amp; PROPERTY SERVICES</small></a>
         <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label="Toggle navigation">{menuOpen ? 'CLOSE' : 'MENU'} <span>{menuOpen ? '×' : '☰'}</span></button>
