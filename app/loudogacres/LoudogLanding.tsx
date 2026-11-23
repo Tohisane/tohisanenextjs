@@ -4,10 +4,6 @@ import { useState, type FormEvent } from 'react';
 import styles from './loudog.module.css';
 import { LANDSCAPE_OFFERS, TRACTOR_SERVICES, TRACTOR_DURATIONS, TRACTOR_MIN_HOURS } from './pricing';
 
-// IMPORTANT: Change this to the Gmail address you currently use before publishing.
-// This website does not store messages: the form opens the visitor's email app.
-const CONTACT_EMAIL = 'loudogacres@gmail.com';
-
 type RequestType = 'Botanical enhancement' | 'Tractor & property service' | 'Landscape stewardship' | 'Bespoke landscaping' | 'Contractor partnership' | 'Landscape consultation';
 const requestTypes: RequestType[] = ['Botanical enhancement', 'Tractor & property service', 'Landscape stewardship', 'Bespoke landscaping', 'Landscape consultation', 'Contractor partnership'];
 const services = [
@@ -21,6 +17,8 @@ export default function LoudogLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [requestType, setRequestType] = useState<RequestType>('Botanical enhancement');
   const [notice, setNotice] = useState('');
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [formStartedAt] = useState(() => Date.now());
   const [offerIndex, setOfferIndex] = useState(0);
   const [optionIndex, setOptionIndex] = useState(0);
   const [tractorIndex, setTractorIndex] = useState(0);
@@ -35,21 +33,38 @@ export default function LoudogLanding() {
 
   const navClick = () => setMenuOpen(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const name = String(data.get('name') || '').trim();
-    const email = String(data.get('email') || '').trim();
-    const location = String(data.get('location') || '').trim();
-    const details = String(data.get('details') || '').trim();
-    const body = `Name: ${name}\nEmail: ${email}\nLocation: ${location}\nRequest: ${requestType}\nBudget selection: ${estimate || "Not selected"}\n\nProject details:\n${details}`;
-    if (CONTACT_EMAIL.includes('YOUR_EXISTING_EMAIL')) {
-      setNotice('The site owner needs to set the CONTACT_EMAIL value in LoudogLanding.tsx before this form can send inquiries.');
-      return;
+    if (formStatus === 'sending') return;
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    setFormStatus('sending');
+    setNotice('');
+    try {
+      const response = await fetch('/api/loudogacres/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          location: data.get('location'),
+          details: data.get('details'),
+          company: data.get('company'),
+          requestType,
+          estimate,
+          startedAt: formStartedAt,
+        }),
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok || !result?.ok) throw new Error(result?.error || 'We could not send your message right now. Please try again shortly.');
+      form.reset();
+      setEstimate('');
+      setFormStatus('success');
+      setNotice("Thank you — your inquiry has been sent. We'll be in touch soon.");
+    } catch (error) {
+      setFormStatus('error');
+      setNotice(error instanceof Error ? error.message : 'Something went wrong. Please try again.');
     }
-    const subject = `Loudog Acres inquiry: ${requestType}`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setNotice('Your email app should open with a prepared message. Please send it from there to finish your inquiry.');
   }
 
   return (
@@ -123,7 +138,7 @@ export default function LoudogLanding() {
 
       <section className={styles.aboutSection} id="about"><div className={styles.sectionLabel}><span>06</span> THE HEART OF LOUDOG ACRES</div><div className={styles.aboutContent}><img className={styles.founderPhoto} src="/loudogacres/founder.webp" alt="Founder and dog in a parked excavator" loading="lazy"/><div><h2>Rooted in place.<br /><em>Made to last.</em></h2><p>Loudog Acres is a woman-owned, founder-directed landscaping and property-services business based in the Cleveland–Chattanooga region. We pair a respect for native landscapes and local growing conditions with practical stewardship, creative vision and trusted professional partnerships.</p><p>From a single tractor day to a complete landscape enhancement, we believe care for the land should feel personal, capable and considered.</p></div></div></section>
 
-      <section className={styles.contactSection} id="contact"><div className={styles.contactLeft}><div className={styles.sectionLabel}><span>07</span> START A CONVERSATION</div><h2>Tell us what<br /><em>you have in mind.</em></h2><p>Homeowner, property manager or contractor — share a little about the project and we'll take it from there.</p><div className={styles.contactNote}><strong>SERVICE AREA</strong><span>Cleveland, Chattanooga & nearby Southeast Tennessee communities</span></div><div className={styles.contactNote}><strong>HOW INQUIRIES WORK</strong><span>This form prepares an email in your own mail application. It does not send or store information on the website.</span></div></div><form className={styles.form} onSubmit={handleSubmit}><label htmlFor="la-type">I'M INTERESTED IN</label><select id="la-type" value={requestType} onChange={e=>{setRequestType(e.target.value as RequestType);setEstimate('');}}>{requestTypes.map(t=><option key={t}>{t}</option>)}</select>{estimate && <div className={styles.selectedEstimate}><strong>YOUR SELECTED ESTIMATE</strong><p>{estimate}</p><button type="button" onClick={()=>setEstimate('')}>Clear selection</button></div>}<div className={styles.formPair}><div><label htmlFor="la-name">YOUR NAME</label><input required id="la-name" name="name" placeholder="Full name" /></div><div><label htmlFor="la-email">EMAIL</label><input required type="email" id="la-email" name="email" placeholder="you@example.com" /></div></div><label htmlFor="la-location">PROPERTY / PROJECT LOCATION</label><input id="la-location" name="location" placeholder="City or general area" /><label htmlFor="la-details">A LITTLE ABOUT YOUR PROJECT</label><textarea required rows={4} id="la-details" name="details" placeholder="What would you like to enhance, maintain, or prepare?" /><button className={styles.submitButton} type="submit">PREPARE EMAIL INQUIRY <span>↗</span></button>{notice && <p role="status" className={styles.formNotice}>{notice}</p>}</form></section>
+      <section className={styles.contactSection} id="contact"><div className={styles.contactLeft}><div className={styles.sectionLabel}><span>07</span> START A CONVERSATION</div><h2>Tell us what<br /><em>you have in mind.</em></h2><p>Homeowner, property manager or contractor — share a little about the project and we'll take it from there.</p><div className={styles.contactNote}><strong>SERVICE AREA</strong><span>Cleveland, Chattanooga & nearby Southeast Tennessee communities</span></div><div className={styles.contactNote}><strong>HOW INQUIRIES WORK</strong><span>Your message is sent securely from this page straight to our inbox, and we reply to the email address you provide. Nothing is stored on the website.</span></div></div><form className={styles.form} onSubmit={handleSubmit} aria-busy={formStatus === 'sending'}><div className={styles.honeypot} aria-hidden="true"><label htmlFor="la-company">Company</label><input id="la-company" name="company" tabIndex={-1} autoComplete="off" /></div><label htmlFor="la-type">I'M INTERESTED IN</label><select id="la-type" value={requestType} onChange={e=>{setRequestType(e.target.value as RequestType);setEstimate('');}}>{requestTypes.map(t=><option key={t}>{t}</option>)}</select>{estimate && <div className={styles.selectedEstimate}><strong>YOUR SELECTED ESTIMATE</strong><p>{estimate}</p><button type="button" onClick={()=>setEstimate('')}>Clear selection</button></div>}<div className={styles.formPair}><div><label htmlFor="la-name">YOUR NAME</label><input required id="la-name" name="name" placeholder="Full name" /></div><div><label htmlFor="la-email">EMAIL</label><input required type="email" id="la-email" name="email" placeholder="you@example.com" /></div></div><label htmlFor="la-location">PROPERTY / PROJECT LOCATION</label><input id="la-location" name="location" placeholder="City or general area" /><label htmlFor="la-details">A LITTLE ABOUT YOUR PROJECT</label><textarea required rows={4} id="la-details" name="details" placeholder="What would you like to enhance, maintain, or prepare?" /><button className={styles.submitButton} type="submit" disabled={formStatus === 'sending'}>{formStatus === 'sending' ? 'SENDING…' : 'SEND INQUIRY'} <span>↗</span></button>{notice && <p role={formStatus === 'error' ? 'alert' : 'status'} className={`${styles.formNotice} ${formStatus === 'error' ? styles.formError : styles.formSuccess}`}>{notice}</p>}</form></section>
       <footer className={styles.footer}><div><strong>LOUDOG ACRES</strong><span>BESPOKE LANDSCAPING & PROPERTY SERVICES</span></div><p>Beautiful by Nature. Bountiful by Design.</p><small>© {new Date().getFullYear()} Loudog Acres · Southeast Tennessee</small></footer>
     </main>
   );
