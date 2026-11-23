@@ -56,7 +56,7 @@ export default function LoudogLanding() {
     <main className={styles.site}>
       <div className={styles.topline}><span>LOCALLY ROOTED · WOMAN-OWNED</span><span>CLEVELAND · CHATTANOOGA · SOUTHEAST TENNESSEE</span></div>
       <header className={styles.header}>
-        <a href="#top" className={styles.wordmark} onClick={navClick} aria-label="Loudog Acres home"><span>LOUDOG ACRES</span><small>BESPOKE LANDSCAPING</small></a>
+        <a href="#top" className={styles.wordmark} onClick={navClick} aria-label="Loudog Acres home"><span>LOUDOG ACRES</span><small>BESPOKE LANDSCAPING &amp; PROPERTY SERVICES</small></a>
         <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label="Toggle navigation">{menuOpen ? 'CLOSE' : 'MENU'} <span>{menuOpen ? '×' : '☰'}</span></button>
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`} aria-label="Main navigation">
           <a onClick={navClick} href="#approach">OUR APPROACH</a><a onClick={navClick} href="#services">SERVICES</a><a onClick={navClick} href="#pricing">PRICING</a><a onClick={navClick} href="#partners">PARTNERSHIPS</a><a onClick={navClick} href="#field-guide">FIELD GUIDE</a><a onClick={navClick} href="#about">ABOUT</a><a onClick={navClick} className={styles.navCta} href="#contact">REQUEST AN ESTIMATE <span>↗</span></a>
