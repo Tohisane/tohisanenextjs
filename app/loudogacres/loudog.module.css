@@ -9,3 +9,4 @@
 @media (max-width:1180px){.header{position:relative}.menuToggle{display:flex;align-items:center;gap:12px}.nav{display:none;position:absolute;z-index:20;top:100%;left:0;right:0;padding:24px;background:#f7f3ea;box-shadow:0 15px 22px #0002;align-items:stretch;flex-direction:column}.navOpen{display:flex}.nav a{font-size:12px;padding:9px}}
 @media (max-width:480px){.header{gap:12px;padding-left:16px;padding-right:16px}.wordmark{padding:11px 14px}.wordmark span{font-size:21px}.wordmark small{font-size:7px;letter-spacing:.1em;margin-top:6px}}
 .honeypot{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}.formSuccess{margin-top:14px;padding:12px 14px;border-left:3px solid #3d5944;background:#e8ede3}.formError{margin-top:14px;padding:12px 14px;border-left:3px solid #8a3a2a;background:#f5e6e0;color:#7a2e20!important}.submitButton:disabled{opacity:.6;cursor:wait}
+.serviceNote{margin-top:18px;font-style:italic;font-weight:600}

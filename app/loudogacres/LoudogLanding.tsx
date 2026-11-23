@@ -7,7 +7,7 @@ import { LANDSCAPE_OFFERS, TRACTOR_SERVICES, TRACTOR_DURATIONS, TRACTOR_MIN_HOUR
 type RequestType = 'Botanical enhancement' | 'Tractor & property service' | 'Landscape stewardship' | 'Bespoke landscaping' | 'Contractor partnership' | 'Landscape consultation';
 const requestTypes: RequestType[] = ['Botanical enhancement', 'Tractor & property service', 'Landscape stewardship', 'Bespoke landscaping', 'Landscape consultation', 'Contractor partnership'];
 const services = [
-  { number: '01', type: 'BOTANICAL ENHANCEMENTS', title: 'Bring hardscapes to life.', desc: 'Thoughtful layers of trees, shrubs, native perennials, culinary herbs, vegetables, fruit-bearing plants and flowering botanicals that make existing outdoor spaces feel complete.', cls: 'enhance' },
+  { number: '01', type: 'BOTANICAL ENHANCEMENTS', title: 'Bring hardscapes to life.', desc: 'Transform your existing landscape by dedicating approximately 30% of the space to purposeful plantings. We thoughtfully integrate culinary herbs, vegetables, fruit-bearing trees and shrubs, and beneficial flowering botanicals into your established surroundings — creating a landscape that is as productive as it is beautiful.', note: 'Not a separate garden. A more purposeful landscape.', cls: 'enhance' },
   { number: '02', type: 'LANDSCAPE STEWARDSHIP', title: 'Care that continues.', desc: 'Ongoing landscape maintenance and seasonal improvements, coordinated through trusted horticultural professionals.', cls: 'care' },
   { number: '03', type: 'TRACTOR & PROPERTY SERVICES', title: 'Practical work. Done well.', desc: 'Bush hogging, tilling, material spreading, light driveway upkeep, garden preparation and acreage care with a compact Kubota tractor.', cls: 'tractor' },
   { number: '04', type: 'BESPOKE LANDSCAPING', title: 'Designed for the land.', desc: 'Landscape concepts and planting plans shaped by the site, the people who use it, and the character of Southeast Tennessee.', cls: 'design' },
@@ -104,7 +104,7 @@ export default function LoudogLanding() {
       <section className={styles.servicesSection} id="services">
         <div className={styles.sectionLabel}><span>02</span> OUR WORK</div>
         <div className={styles.sectionHeading}><h2>What the land needs.<br /><em>What you imagine.</em></h2><p>We shape and coordinate distinctive landscape improvements, with trusted installation partners and hands-on property services where they make sense.</p></div>
-        <div className={styles.servicesGrid}>{services.map(s=><article className={`${styles.service} ${styles[s.cls]}`} key={s.number}><div className={styles.serviceTop}><span>{s.number}</span><span>↗</span></div><div><p className={styles.serviceType}>{s.type}</p><h3>{s.title}</h3><p className={styles.serviceDescription}>{s.desc}</p></div></article>)}</div>
+        <div className={styles.servicesGrid}>{services.map(s=><article className={`${styles.service} ${styles[s.cls]}`} key={s.number}><div className={styles.serviceTop}><span>{s.number}</span><span>↗</span></div><div><p className={styles.serviceType}>{s.type}</p><h3>{s.title}</h3><p className={styles.serviceDescription}>{s.desc}</p>{'note' in s && s.note ? <p className={`${styles.serviceDescription} ${styles.serviceNote}`}>{s.note}</p> : null}</div></article>)}</div>
       </section>
 
 
