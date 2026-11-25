@@ -11,3 +11,7 @@
 .honeypot{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}.formSuccess{margin-top:14px;padding:12px 14px;border-left:3px solid #3d5944;background:#e8ede3}.formError{margin-top:14px;padding:12px 14px;border-left:3px solid #8a3a2a;background:#f5e6e0;color:#7a2e20!important}.submitButton:disabled{opacity:.6;cursor:wait}
 .serviceNote{margin-top:18px;font-style:italic;font-weight:600}
 .service p.serviceMore{margin-top:14px}
+.serviceAreaNote{margin-top:24px;padding:28px 32px;border:1px solid #cfc6b4;border-left:3px solid #2f4234;background:#efe8da}
+.serviceAreaNote h3{margin:0 0 10px;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:24px;line-height:1.2;color:#22261f}
+.serviceAreaNote p{margin:0;font-size:15px;line-height:1.7;color:#50574b;max-width:760px}
+@media (max-width:640px){.serviceAreaNote{padding:22px 20px}.serviceAreaNote h3{font-size:21px}}
