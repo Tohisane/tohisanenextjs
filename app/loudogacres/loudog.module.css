@@ -23,3 +23,11 @@
 .contactLine a{color:#2f3d2e;text-decoration:underline;text-decoration-color:rgba(47,61,46,.35);text-underline-offset:3px;overflow-wrap:anywhere}
 .contactLine a:hover,.contactLine a:focus-visible{text-decoration-color:#2f3d2e}
 .contactCard+.contactNote{margin-top:30px}
+.nav{margin-left:auto}
+.fbHeader,.fbFooter{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;flex-shrink:0;border:1px solid #3d4439;color:#2f3d2e;transition:background-color .2s,color .2s}
+.fbHeader:hover,.fbHeader:focus-visible{background:#2f3d2e;color:#f7f3ea}
+.fbFooter{border-color:rgba(234,230,219,.45);color:#eae6db}
+.fbFooter:hover,.fbFooter:focus-visible{background:#eae6db;color:#1c2820}
+@media(max-width:1050px){.menuToggle{margin-left:auto}}
+@media(max-width:400px){.fbHeader{width:32px;height:32px}}
+@media(max-width:400px){.site .menuToggle{font-size:0;gap:0;padding:4px}.site .menuToggle span{font-size:18px}}
