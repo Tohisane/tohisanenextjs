@@ -16,8 +16,7 @@
 .serviceAreaNote p{margin:0;font-size:15px;line-height:1.7;color:#50574b;max-width:760px}
 @media (max-width:640px){.serviceAreaNote{padding:22px 20px}.serviceAreaNote h3{font-size:21px}}
 .contactCard{margin-top:45px;max-width:430px;padding:26px 28px;background:#efe8da;border:1px solid var(--line);border-left:3px solid #2f3d2e;font-style:normal;display:flex;flex-direction:column;gap:6px}
-.contactName{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:24px;color:#22251f}
-.contactRole{font-size:10px;letter-spacing:.16em;font-weight:700;color:#5b6652;margin-bottom:10px}
+.contactName{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:24px;color:#22251f;margin-bottom:10px}
 .contactAddress{font-size:14px;line-height:1.7;color:#4f514a;margin-bottom:8px}
 .contactLine{display:flex;align-items:baseline;gap:14px;font-size:14px;flex-wrap:wrap}
 .contactLabel{font-size:10px;letter-spacing:.16em;font-weight:700;color:#68695e;min-width:52px}
