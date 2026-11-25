@@ -48,7 +48,7 @@ function fail(message: string, status: number) {
 
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LOUDOG_INQUIRY_TO_EMAIL || 'loudogacres@gmail.com';
+  const to = process.env.LOUDOG_INQUIRY_TO_EMAIL || 'loudogacres@tohisane.com';
   const domain = process.env.RESEND_EMAIL_DOMAIN;
   const from =
     process.env.LOUDOG_INQUIRY_FROM_EMAIL ||
